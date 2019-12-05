@@ -21,7 +21,7 @@ LABEL resty_image_tag="${RESTY_IMAGE_TAG}"
 LABEL resty_deb_flavor="${RESTY_DEB_FLAVOR}"
 LABEL resty_deb_version="${RESTY_DEB_VERSION}"
 
-RUN wget -O /etc/apt/sources.list http://mirrors.cloud.tencent.com/repo/ubuntu18_sources.list
+COPY ./ubuntu18_sources.list /etc/apt/sources.list
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
